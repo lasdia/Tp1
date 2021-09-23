@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Un élève{% endblock %}
+
+{% block body %}
+
+
+
+<p>--------------------------</p>
+
+
+
+<p>Nom: {{eleve2.nom}}</p>
+<p>prenom: {{eleve2.prenom}}</p>
+<p>Classe de l'éleves: {{eleve2.classe.nom}}</p>
+
+{% for note1 in notes %}
+<p>les notes: {{note1.note}}</p>
+{% endfor %}
+
+
+
+{% endblock %}

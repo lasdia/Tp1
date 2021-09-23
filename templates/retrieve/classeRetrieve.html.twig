@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les Classes{% endblock %}
+
+{% block body %}
+
+Liste des classes
+{% for classe1 in classes %}
+<p>--------------------------</p>
+
+<p>Nom de la classes: {{classe1.nom}}</p>
+<p>Niveau: {{classe1.niveau}}</p>
+<p>Professeur principal: {{classe1.prof.nom}}</p>
+
+<a class="btn btn-danger" href="{{ path('delete_classe', { id: classe1.id }) }}"
+onclick="return confirm('Êtes-vous sûr ?')" class="mx-2">Supprimer</a>
+
+
+
+{% endfor %}
+
+{% endblock %}

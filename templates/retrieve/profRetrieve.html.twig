@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les Professeurs{% endblock %}
+
+{% block body %}
+
+Liste des professeurs
+{% for classe1 in classes %}
+<p>--------------------------</p>
+
+    <p>Nom: {{classe1.prof.nom}}</p>
+    <p>Prenom: {{classe1.prof.prenom}}</p>
+    <p>classe: {{classe1.nom}}</p>
+    <p>matiere: {{classe1.prof.matiere.nom}}</p>
+
+    <a class="btn btn-danger" href="{{ path('delete_prof', { id: classe1.id }) }}"
+    onclick="return confirm('Êtes-vous sûr ?')" class="mx-2">Supprimer</a>
+
+{% endfor %}
+
+
+{% endblock %}

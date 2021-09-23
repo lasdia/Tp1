@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les Eleves{% endblock %}
+
+{% block body %}
+
+Liste des eleves
+{% for eleve1 in eleves %}
+<p>--------------------------</p>
+
+    <p>Nom: {{eleve1.nom}}</p>
+    <p>prenom: {{eleve1.prenom}}</p>
+    <p>Classe de l'éleves: {{eleve1.classe.nom}}</p>
+    
+    <a href="{{ path('one_eleve', { id: eleve1.id }) }}">
+        lien details
+     </a>
+    
+    <a class="btn btn-danger" href="{{ path('delete_eleve', { id: eleve1.id }) }}"
+    onclick="return confirm('Êtes-vous sûr ?')" class="mx-2">Supprimer</a>
+    
+
+{% endfor %}
+
+{% endblock %}
